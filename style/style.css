@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 .hide {
     display: none
 }
@@ -93,6 +97,17 @@
     width: 100%;
     min-height: 50px;
     background: #fff;
+}
+
+.main:before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: 0;
+    left: 0;
+    height: 100px;
+    background: #fff;
+    transform: skew(-92deg);
 }
 
 .main .mainfix {

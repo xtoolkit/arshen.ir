@@ -1,0 +1,289 @@
+html {
+    overflow-x: hidden;
+}
+
+.hide {
+    display: none;
+}
+
+a {
+    @include animation_ef_cross(0.1s,linear);
+}
+
+.header {
+    background: $base_color url($wallpaper) center center no-repeat fixed;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+
+    .logo {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background: url($logo) center center no-repeat;
+    }
+
+    .muq {
+        font: 400 30px/140% "Segoe UI", "arial";
+        color: #fff;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        margin-top: 130px;
+        right: 0;
+        left: 0;
+
+        .mbox {
+            min-width: 290px;
+            max-width: 60%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.main {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    min-height: 50px;
+    background: #fff;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: 0;
+        left: 0;
+        height: 100px;
+        background: #fff;
+        transform: skew(-92deg);
+    }
+
+    .line {
+        margin-top: 50px;
+        max-width: 1000px;
+        overflow: hidden;
+
+        .profint .bleft:before {
+            content: '';
+            width: 6px;
+            height: 10000%;
+            position: absolute;
+            background-color: $base_color;
+            top: 0;
+            right: 50%;
+            margin-right: -3px;
+        }
+    }
+}
+
+.profint {
+    .avatar {
+        @include br_cross(100%);
+        width: 180px;
+        height: 180px;
+        padding: 6px;
+        border: 5px solid $base_color;
+        margin: 0 auto;
+        display: block;
+        position: relative;
+        background: #fff;
+    }
+
+    .title1 {
+        font: normal 54px/58px Arial;
+        border-bottom: 1px solid $base_color;
+        min-height: 58px;
+        margin: 26px 0 3px;
+
+        span {
+            color: $base_color;
+            font-weight: bold;
+        }
+    }
+
+    .title2 {
+        font: normal 20px/46px Arial;
+        height: 46px;
+    }
+
+    .title3 {
+        font: normal 14px/18px Arial;
+    }
+}
+
+.headx {
+    margin-top: 70px;
+
+    .icon {
+        background: url($colicon) center center no-repeat;
+        position: relative;
+        height: 75px;
+        color: $base_color;
+    }
+
+    .bright {
+        margin: 10px 0;
+        font: bold 40px/50px arial;
+    }
+}
+
+.item {
+    padding: 10px 0;
+
+    .bleft {
+        text-align: center;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+        @include br_cross(100%);
+        padding: 10px;
+        border: 7px solid $base_color;
+        background: #fff;
+        display: inline-block;
+        position: relative;
+        margin-top: 7px;
+
+        &:before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            @include br_cross(100%);
+            background-color: $base_color;
+        }
+    }
+
+    .title {
+        color: $base_color;
+        font: bold 20px/36px Arial;
+        border-bottom: 1px solid #333;
+        margin-bottom: 10px;
+    }
+
+    .dec {
+        font: normal 14px Arial;
+        margin-bottom: 10px;
+
+        p {
+            line-height: 155%;
+            padding: 5px 0;
+            margin: 0;
+        }
+
+        &.buttons p {
+            padding: 10px 0;
+        }
+    }
+}
+
+.buttons {
+    a {
+        color: #fff;
+        background-color: $base_color;
+        padding: 4px 8px;
+        text-decoration: none;
+        @include br_cross(2px);
+        margin-right: 2px;
+
+        &:hover {
+            background-color: darken($base_color,10%);
+        }
+    }
+}
+
+.skill {
+    width: 100%;
+    height: 24px;
+    background: #eee;
+    position: relative;
+    margin-bottom: 20px;
+    @include br_cross(5px);
+    overflow: hidden;
+
+    .bar {
+        float: left;
+        height: 24px;
+        background-color: $base_color;
+    }
+
+    .name {
+        position: absolute;
+        height: 24px;
+        font: normal 14px/24px arial;
+        color: #fff;
+        left: 6px;
+        top: 0;
+    }
+
+    .level {
+        position: absolute;
+        height: 24px;
+        font: normal 14px/24px arial;
+        top: 0;
+        right: 6px;
+        color: #333;
+    }
+
+    &.is100 .level {
+        color: #fff;
+    }
+}
+
+.lable {
+    width: 60px;
+    display: inline-block;
+    text-align: right;
+}
+
+.footer {
+    margin-bottom: 100px;
+}
+
+.backtop {
+    height: 75px;
+    text-align: center;
+
+    a {
+        width: 0;
+        padding: 0;
+        border: 75px solid $base_color;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-top: none;
+
+        &:hover {
+            border-bottom-color: darken($base_color,10%);
+        }
+    }
+}
+@mixin grids_ma1 {
+    .item .bleft,
+    .main .line .profint .bleft:before {
+        display: none;
+    }
+
+    .bright {
+        text-align: center;
+    }
+
+    .headx .bright {
+        font-size: 32px;
+    }
+
+    .item .fixedbutton {
+        line-height: 30px;
+    }
+
+    .header .muq {
+        font-size: 20px;
+    }
+}
